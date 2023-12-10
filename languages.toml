@@ -1,0 +1,94 @@
+[[language]]
+name = "rust"
+file-types = ["rs"]
+formatter = { command = "rustfmt" }
+auto-format = true
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "svelte"
+auto-format = true
+formatter = { command = 'prettier', args = [
+  "--plugin",
+  "prettier-plugin-svelte",
+  "--stdin",
+] }
+indent = { tab-width = 4, unit = "    " }
+roots = ["package.json"]
+
+[language-server.phpactor]
+command = "phpactor"
+formatter = { command = 'prettier', args = ["--parser", "php"] }
+auto-format = true
+args = ["language-server"]
+[[language]]
+name = "php"
+language-servers = ["phpactor"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "html"
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+auto-format = true
+file-types = ["html"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "json"
+formatter = { command = 'prettier', args = ["--parser", "json"] }
+auto-format = true
+file-types = ["json"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "css"
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+auto-format = true
+file-types = ["css"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "javascript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+file-types = ["js"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "typescript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+file-types = ["ts"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "jsx"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "jsx"] }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "tsx"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "tsx"] }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "markdown"
+formatter = { command = 'prettier', args = ["--parser", "markdown"] }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "bash"
+formatter = { command = 'shfmt', args = ["-i", "4"] }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
