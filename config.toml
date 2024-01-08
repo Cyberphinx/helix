@@ -4,11 +4,7 @@ theme = "rose_pine"
 line-number = "relative"
 rulers = [80, 120]
 mouse = true
-auto-completion = true
-completion-replace = false
-auto-format = true
 auto-save = true
-auto-info = true
 # Show currently open buffers, only when more than one exists.
 bufferline = "multiple"
 # Highlight all lines with a cursor

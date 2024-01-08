@@ -12,11 +12,6 @@ enable = true
 
 [[language]]
 name = "svelte"
-formatter = { command = 'prettier', args = [
-  "--plugin",
-  "prettier-plugin-svelte",
-  "--stdin",
-] }
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
 roots = ["package.json"]
@@ -33,8 +28,6 @@ auto-format = true
 language-servers = ["intelephense"]
 # language-servers = ["phpactor"]
 indent = { tab-width = 4, unit = "    " }
-[language-server.intelephense.stubs]
-args = ["wordpress"]
 
 [[language]]
 name = "html"
