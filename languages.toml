@@ -16,17 +16,10 @@ auto-format = true
 indent = { tab-width = 4, unit = "    " }
 roots = ["package.json"]
 
-# [language-server.phpactor]
-# command = "phpactor"
-# args = ["language-server"]
-# [language-server.phpactor.config]
-# language_server_completion.trim_leading_dollar = true
 [[language]]
 name = "php"
-formatter = { command = 'prettier', args = ["--parser", "php"] }
 auto-format = true
 language-servers = ["intelephense"]
-# language-servers = ["phpactor"]
 indent = { tab-width = 4, unit = "    " }
 
 [[language]]
