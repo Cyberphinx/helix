@@ -1,7 +1,7 @@
 theme = "rose_pine"
 
 [editor]
-line-number = "relative"
+line-number = "absolute"
 rulers = [80, 120]
 mouse = true
 auto-save = true
@@ -47,9 +47,6 @@ enable = true
 
 [keys.normal]
 "esc" = ["collapse_selection", ":w"]
-# Use system clipboard
-y = "yank_main_selection_to_clipboard"
-p = "paste_clipboard_before"
 [keys.select]
 "esc" = ["collapse_selection", "normal_mode", ":w"]
 [keys.insert]

@@ -16,10 +16,24 @@ auto-format = true
 indent = { tab-width = 4, unit = "    " }
 roots = ["package.json"]
 
+[language-server.phpactor]
+command = "phpactor"
+args = ["language-server"]
 [[language]]
 name = "php"
 auto-format = true
-language-servers = ["intelephense"]
+language-servers = [
+  { name = "intelephense", only-features = [
+    "format",
+    "completion",
+    "diagnostics",
+  ] },
+  { name = "phpactor", except-features = [
+    "format",
+    "completion",
+    "diagnostics",
+  ] },
+]
 indent = { tab-width = 4, unit = "    " }
 
 [[language]]
