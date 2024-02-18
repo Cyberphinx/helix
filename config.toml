@@ -1,7 +1,7 @@
 theme = "rose_pine"
 
 [editor]
-line-number = "absolute"
+line-number = "relative"
 rulers = [80, 120]
 mouse = true
 auto-save = true
