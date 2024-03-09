@@ -11,6 +11,7 @@ bufferline = "multiple"
 cursorline = true
 # Force the theme to show colors
 true-color = true
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -23,14 +24,18 @@ git-ignore = true
 
 [editor.statusline]
 left = ["mode", "diagnostics", "spinner", "version-control"]
-center = ["file-name"]
-right = [
+center = [
+  "file-name",
+  "file-modification-indicator",
   "selections",
   "file-type",
   "file-encoding",
   "position-percentage",
   "position",
 ]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [editor.lsp]
 display-inlay-hints = true
