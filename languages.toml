@@ -128,7 +128,9 @@ indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "toml"
+auto-format = true
 formatter = { command = "taplo", args = ["fmt", "-"] }
+indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "yaml"
@@ -150,4 +152,9 @@ indent = { tab-width = 4, unit = "    " }
 name = "dockerfile"
 auto-format = true
 formatter = { command = "dprint", args = ["fmt", "--stdin", "dockerfile"] }
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "lua"
+auto-format = true
 indent = { tab-width = 4, unit = "    " }
