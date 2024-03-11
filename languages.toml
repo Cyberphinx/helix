@@ -32,6 +32,7 @@ language-servers = [
     "format",
     "completion",
     "diagnostics",
+    "inlay-hints",
   ] },
   { name = "phpactor", except-features = [
     "format",
@@ -40,6 +41,7 @@ language-servers = [
   ] },
   { name = "efm", only-features = [
     "diagnostics",
+    "completion",
   ] },
 ]
 
