@@ -1,17 +1,37 @@
-### This is my helix code editor configuration files
+## Helix code editor configuration
 
-#### It includes the configuration of the following languages:
-- rust
-- svelte
-- php: both intelephense and phpactor are used complimentary to each other
-- typescript, javascript, tsx, jsx: deno, eslint, and emmet-ls are used alongside typescript-language-server, and dprint for formatting instead of prettier
-- json
-- html
-- css
-- sql
-- toml
-- yaml
-- markdown
-- bash
-- dockerfile
-- lua
+### Languages:
+
+#### rust
+
+#### svelte
+
+#### php
+- intelephense, phpactor, and efm (phpcs, phpstan, psalm) with efm config file (~/.config/efm-langserver/config.yaml)
+
+#### typescript, javascript, tsx, jsx
+- deno 
+- eslint
+- emmet-ls 
+- typescript-language-server
+- dprint for formatting instead of prettier
+
+#### json
+
+#### html
+
+#### css
+
+#### sql
+
+#### toml
+
+#### yaml
+
+#### markdown
+
+#### bash
+
+#### dockerfile
+
+#### lua
