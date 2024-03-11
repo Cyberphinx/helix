@@ -7,7 +7,9 @@
 #### svelte
 
 #### php
-- intelephense, phpactor, and efm (phpcs, phpstan, psalm) with efm config file (~/.config/efm-langserver/config.yaml)
+- intelephense
+- phpactor
+- efm (phpcs, phpstan, psalm) with efm config file (~/.config/efm-langserver/config.yaml)
 
 #### typescript, javascript, tsx, jsx
 - deno 
