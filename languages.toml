@@ -12,6 +12,7 @@ enable = true
 
 [[language]]
 name = "svelte"
+language-servers = ["svelteserver", "tailwindcss-ls"]
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
 roots = ["package.json"]
@@ -43,7 +44,10 @@ language-servers = [
     "diagnostics",
     "completion",
   ] },
+  { name = "tailwindcss-ls" },
 ]
+[language-server.tailwindcss-ls]
+config = { userLanguages = { php = "html", "*.php" = "html" } }
 
 [language-server]
 deno = { command = "deno", args = ["lsp"] }
@@ -87,7 +91,7 @@ auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = ["deno", "eslint", "emmet-ls"]
+language-servers = ["deno", "eslint", "emmet-ls", "tailwindcss-ls"]
 # formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 formatter = { command = "dprint", args = ["fmt", "--stdin", "tsx"] }
 auto-format = true
@@ -101,7 +105,12 @@ auto-format = true
 
 [[language]]
 name = "jsx"
-language-servers = ["typescript-language-server", "eslint", "emmet-ls"]
+language-servers = [
+  "typescript-language-server",
+  "eslint",
+  "emmet-ls",
+  "tailwindcss-ls",
+]
 # formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 formatter = { command = "dprint", args = ["fmt", "--stdin", "jsx"] }
 auto-format = true
@@ -114,13 +123,13 @@ auto-format = true
 
 [[language]]
 name = "html"
-language-servers = ["vscode-html-language-server", "emmet-ls"]
+language-servers = ["vscode-html-language-server", "emmet-ls", "tailwindcss-ls"]
 formatter = { command = 'prettier', args = ["--parser", "html"] }
 auto-format = true
 
 [[language]]
 name = "css"
-language-servers = ["vscode-css-language-server", "emmet-ls"]
+language-servers = ["vscode-css-language-server", "emmet-ls", "tailwindcss-ls"]
 formatter = { command = 'prettier', args = ["--parser", "css"] }
 auto-format = true
 
