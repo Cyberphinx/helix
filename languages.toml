@@ -84,10 +84,45 @@ provideFormatter = true
 
 [language-server.deno-lsp]
 command = "deno"
-args = ["lsp"]
+args = ["lsp", "--unstable"]
 
 [language-server.deno-lsp.config.deno]
 enable = true
+unstable = true
+lint = true
+suggest.imports.hosts = { "https://deno.land" = true }
+inlayHints.parameterNames.enabled = "all"
+inlayHints.parameterTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.functionLikeReturnTypes.enabled = true
+inlayHints.enumMemberValues.enabled = true
+
+[[language]]
+name = "javascript"
+language-id = "javascript"
+scope = "source.js"
+injection-regex = "^(js|javascript)$"
+file-types = ["js", "jsx", "mjs"]
+shebangs = ["deno", "node"]
+roots = ["deno.json", "deno.jsonc", "package.json", "tsconfig.json"]
+comment-token = "//"
+language-servers = ["deno-lsp"]
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-id = "javascriptreact"
+scope = "source.jsx"
+injection-regex = "jsx"
+file-types = ["jsx"]
+shebangs = ["deno", "node"]
+roots = ["deno.json", "deno.jsonc", "package.json", "tsconfig.json"]
+comment-token = "//"
+language-servers = ["deno-lsp"]
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
 
 [[language]]
 name = "typescript"
@@ -95,39 +130,66 @@ language-id = "typescript"
 scope = "source.ts"
 injection-regex = "^(ts|typescript)$"
 file-types = ["ts"]
-shebangs = ["deno"]
-roots = ["deno.json", "deno.jsonc", "package.json"]
-auto-format = true
+shebangs = ["deno", "node"]
+roots = ["deno.json", "deno.jsonc", "package.json", "tsconfig.json"]
+comment-token = "//"
 language-servers = ["deno-lsp"]
-# language-servers = ["typescript-language-server", "eslint", "emmet-ls"]
-# formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-# formatter = { command = "dprint", args = ["fmt", "--stdin", "typescript"] }
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = ["deno", "eslint", "emmet-ls", "tailwindcss-ls"]
-# formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-formatter = { command = "dprint", args = ["fmt", "--stdin", "tsx"] }
+language-id = "typescriptreact"
+scope = "source.tsx"
+injection-regex = "^(tsx)$"                                          # |typescript
+file-types = ["tsx"]
+shebangs = ["deno", "node"]
+roots = ["deno.json", "deno.jsonc", "package.json", "tsconfig.json"]
+comment-token = "//"
+language-servers = ["deno-lsp"]
+indent = { tab-width = 2, unit = "  " }
 auto-format = true
 
-[[language]]
-name = "javascript"
-language-servers = ["typescript-language-server", "eslint", "emmet-ls"]
-# formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-formatter = { command = "dprint", args = ["fmt", "--stdin", "javascript"] }
-auto-format = true
+# [[language]]
+# name = "typescript"
+# language-id = "typescript"
+# scope = "source.ts"
+# injection-regex = "^(ts|typescript)$"
+# file-types = ["ts"]
+# shebangs = ["deno"]
+# roots = ["deno.json", "deno.jsonc", "package.json"]
+# auto-format = true
+# language-servers = ["deno-lsp"]
+# # language-servers = ["typescript-language-server", "eslint", "emmet-ls"]
+# # formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+# # formatter = { command = "dprint", args = ["fmt", "--stdin", "typescript"] }
 
-[[language]]
-name = "jsx"
-language-servers = [
-  "typescript-language-server",
-  "eslint",
-  "emmet-ls",
-  "tailwindcss-ls",
-]
-# formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-formatter = { command = "dprint", args = ["fmt", "--stdin", "jsx"] }
-auto-format = true
+# [[language]]
+# name = "tsx"
+# language-servers = ["deno-lsp"]
+# # language-servers = ["deno-lsp", "eslint", "emmet-ls", "tailwindcss-ls"]
+# # formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+# # formatter = { command = "dprint", args = ["fmt", "--stdin", "tsx"] }
+# auto-format = true
+
+# [[language]]
+# name = "javascript"
+# language-servers = ["typescript-language-server", "eslint", "emmet-ls"]
+# # formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+# formatter = { command = "dprint", args = ["fmt", "--stdin", "javascript"] }
+# auto-format = true
+
+# [[language]]
+# name = "jsx"
+# language-servers = [
+#   "typescript-language-server",
+#   "eslint",
+#   "emmet-ls",
+#   "tailwindcss-ls",
+# ]
+# # formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+# formatter = { command = "dprint", args = ["fmt", "--stdin", "jsx"] }
+# auto-format = true
 
 [[language]]
 name = "json"
