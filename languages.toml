@@ -49,9 +49,9 @@ language-servers = [
 [language-server.tailwindcss-ls]
 config = { userLanguages = { php = "html", "*.php" = "html" } }
 
-[language-server]
-deno = { command = "deno", args = ["lsp"] }
-emmet-ls = { command = "emmet-ls", args = ["--stdio"] }
+[language-server.emmet-ls]
+command = "emmet-ls"
+args = ["--stdio"]
 
 [language-server.eslint]
 command = "vscode-eslint-language-server"
@@ -82,12 +82,26 @@ scss = { validate = { enable = true } }
 less = { validate = { enable = true } }
 provideFormatter = true
 
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+
+[language-server.deno-lsp.config.deno]
+enable = true
+
 [[language]]
 name = "typescript"
-language-servers = ["typescript-language-server", "eslint", "emmet-ls"]
-# formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-formatter = { command = "dprint", args = ["fmt", "--stdin", "typescript"] }
+language-id = "typescript"
+scope = "source.ts"
+injection-regex = "^(ts|typescript)$"
+file-types = ["ts"]
+shebangs = ["deno"]
+roots = ["deno.json", "deno.jsonc", "package.json"]
 auto-format = true
+language-servers = ["deno-lsp"]
+# language-servers = ["typescript-language-server", "eslint", "emmet-ls"]
+# formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+# formatter = { command = "dprint", args = ["fmt", "--stdin", "typescript"] }
 
 [[language]]
 name = "tsx"
