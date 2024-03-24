@@ -10,9 +10,13 @@ allFeatures = true
 [language-server.rust-analyzer.config.procMacro]
 enable = true
 
+[language-server.svelteserver]
+command = "svelteserver"
+args = ["--stdio"]
+
 [[language]]
 name = "svelte"
-language-servers = ["svelteserver", "tailwindcss-ls"]
+language-servers = ["svelteserver", "eslint", "emmet-ls", "tailwindcss-ls"]
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
 roots = ["package.json"]
@@ -165,7 +169,6 @@ auto-format = true
 
 [[language]]
 name = "json"
-# formatter = { command = "prettier", args = [ "--parser", "json" ] }
 formatter = { command = "dprint", args = ["fmt", "--stdin", "json"] }
 auto-format = true
 
