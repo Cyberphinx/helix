@@ -12,6 +12,7 @@ cursorline = true
 # Force the theme to show colors
 true-color = true
 color-modes = true
+insert-final-newline = false
 
 [editor.cursor-shape]
 insert = "bar"
